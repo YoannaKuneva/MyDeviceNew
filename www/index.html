@@ -1,34 +1,7 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
         <meta http-equiv="Content-Security-Policy" content="default-src &apos;self&apos; data: gap: https://ssl.gstatic.com &apos;unsafe-eval&apos;; style-src &apos;self&apos; &apos;unsafe-inline&apos;; media-src *; img-src &apos;self&apos; data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -63,7 +36,53 @@
 			</div>
 			
 			<div class="ui-content">
-<p>Page 1 content goes here</p>			</div><!-- end page 1 content -->
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+					<li>
+						Cordova version:
+						<span id="cordovaVersion"></span>
+					</li>
+					<li>
+						Device's manufacturer:
+						<span id="manufacturer"></span>
+					</li>
+					<li>
+						Is it running on a simulator:
+						<span id="isVirtual"></span>
+					</li>
+					<li>
+						Device's model:
+						<span id="deviceModel"></span>
+					</li>
+					<li>
+						Device's operating system:
+						<span id="operatingSystem"></span>
+					</li>
+					<li>
+						Operating system version:
+						<span id="osVersion"></span>
+					</li>
+					<li>
+						Universally Unique Identifier:
+						<span id="uuid"></span>
+					</li>
+					<li>
+						Device hardware serial number:
+						<span id="serial"></span>
+					</li>
+					<li>
+						Battery Percentage:
+						<span id="batteryStatus"></span>
+					</li>
+					<li>
+						Is Plugged:
+						<span id="isPlugged"></span>
+					</li>
+					<li>
+						Connection type:
+						<span id="connectionType"></span>
+					</li>
+				</ul>		
+			</div><!-- end page 1 content -->
 			
 			<div data-role="footer" data-position="fixed">
 				<h1>Page1</h1>
