@@ -20,27 +20,46 @@
 				margin: 5px !important;
 				position: relative !important;
 		}
-		#pictureParagraph, #picturePG, #devicePG {
+		#pictureParagraph, #picturePG, #devicePG, #locationPG {
 			text-align: center;
+		}
+
+		#listList {
+			margin-top: 40px;
+		}
+
+		#back-btn {
+			float: left;
+			text-align: center;
+			width: 50px;
+		}
+
+		#forward-btn {
+			float: right;
+			text-align: center;
+			width: 50px;
 		}
 		</style>
         <title>Hello World</title>
     </head>
     <body>		<!-- page 1 -->
-		<div data-role="page" id="page1">
+		<div data-role="page" id="devicePage">
 			<div data-role="header">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#page1" class="ui-btn-active ui-state-persist">Page 1</a></li>
+						<li><a href="#devicePage" class="ui-btn-active ui-state-persist">Page 1</a></li>
 						<li><a href="#picturePage">Page 2</a></li>
-						<li><a href="#page3">Page 3</a></li>
+						<li><a href="#locationPage">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div>
-			
 			<div class="ui-content">
+				<div>
+					<a href="#locationPage" data-transition="slide" data-role="button" data-icon="back" id="back-btn" class="">BACK</a>
+					<a href="#picturePage" data-transition="slide" data-role="button" data-icon="forward" id="forward-btn">NEXT</a>
+				</div>
 				<p id="devicePG">My Device</p>
-				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" id="listList">
 					<li>
 						Cordova version:
 						<span id="cordovaVersion"></span>
@@ -101,19 +120,23 @@
 			<div data-role="header">
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#page1">Page 1</a></li>
+						<li><a href="#devicePage">Page 1</a></li>
 						<li><a href="#picturePage" class="ui-btn-active ui-state-persist">Page 2</a></li>
-						<li><a href="#page3">Page 3</a></li>
+						<li><a href="#locationPage">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->	
 			</div>
 			
 			<div class="ui-content">
+				<div>
+					<a href="#devicePage" data-transition="slide" data-role="button" data-icon="back" id="back-btn" class="">BACK</a>
+					<a href="#locationPage" data-transition="slide" data-role="button" data-icon="forward" id="forward-btn">NEXT</a>
+				</div>
 				<p id="picturePG">Picture Page</p>
 				<div>
 					<img src="" alt="" id="myImage">
 					<button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
-					<a href="#page1" data-transition="slide" data-role="button" data-icon="back" id="back-btn">BACK</a>
+					<button id="addPicture">Add Picture</button>
 				</div>
 			</div><!-- end page 2 content -->
 			
@@ -123,23 +146,51 @@
 		</div><!-- /page2 -->
 		
 				<!-- page 3 -->
-		<div data-role="page" id="page3">
+		<div data-role="page" id="locationPage">
 			<div data-role="header">				
 				<div data-role="navbar">
 					<ul>
-						<li><a href="#page1">Page 1</a></li>
+						<li><a href="#devicePage">Page 1</a></li>
 						<li><a href="#picturePage">Page 2</a></li>
-						<li><a href="#page3" class="ui-btn-active ui-state-persist">Page 3</a></li>
+						<li><a href="#locationPage" class="ui-btn-active ui-state-persist">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div>
 			
 			<div class="ui-content">
-				<p>This is page 3</p>
+				<div>
+					<a href="#picturePage" data-transition="slide" data-role="button" data-icon="back" id="back-btn" class="">BACK</a>
+					<a href="#devicePage" data-transition="slide" data-role="button" data-icon="forward" id="forward-btn">NEXT</a>
+				</div>
+				<p id="locationPG">This is my Location</p>
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow" id="listList">
+					<li>
+						Latitude:
+						<span id="latitude-value"></span>
+					</li>
+					<li>
+						Longitude:
+						<span id="longitude-value"></span>
+					</li>
+					<li>
+						Altitude (m):
+						<span id="altitude-value"></span>
+					</li>
+					<li>
+						Accuracy (m):
+						<span id="accuracy-value"></span>
+					</li>
+					<li>
+						Altitude accuracy (m):
+						<span id="altitudeAccuracy-value"></span>
+					</li>
+				</ul>
 			</div><!-- end page 3 content -->
 			
 			<div data-role="footer" data-position="fixed">
-				<h1>Page3</h1>
+				<p id="pictureParagraph">Make picture
+					<a href="#picturePage" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+				</p>
 			</div><!-- /footer -->
 		</div><!-- /page3 -->
 <script src="cordova.js"></script><script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script><script type="text/javascript" id="jqm-trans-disable">

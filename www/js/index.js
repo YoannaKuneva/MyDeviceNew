@@ -5,6 +5,9 @@ function onDeviceReady() {
     window.addEventListener("batterystatus", onBatteryStatus, false);
     applyDeviceData();
     checkConnection();
+
+    navigator.geolocation.watchPosition(geolocationSuccess,geolocationError);
+
     $("#camera-btn").click(getPicutre);
     $("#addPicture").click(sendPictureRequest);
 }
@@ -40,4 +43,16 @@ function checkConnection() {
     states[Connection.NONE] = 'No network connection';
     
     $("#connectionType").text(states[networkState]);
+}
+
+function geolocationSuccess(position) {
+    $('#latitude-value').text(position.coords.latitude);
+    $('#longitude-value').text(position.coords.longitude);
+    $('#altitude-value').text(position.coords.altitude);
+    $('#accuracy-value').text(position.coords.accuracy);
+    $('#altitudeAccuracy-value').text(position.coords.altitudeAccuracy);
+}
+
+function geolocationError(error) {
+    alert(error);    
 }
