@@ -20,6 +20,9 @@
 				margin: 5px !important;
 				position: relative !important;
 		}
+		#pictureParagraph, #picturePG, #devicePG {
+			text-align: center;
+		}
 		</style>
         <title>Hello World</title>
     </head>
@@ -29,13 +32,14 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#page1" class="ui-btn-active ui-state-persist">Page 1</a></li>
-						<li><a href="#page2">Page 2</a></li>
+						<li><a href="#picturePage">Page 2</a></li>
 						<li><a href="#page3">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->
 			</div>
 			
 			<div class="ui-content">
+				<p id="devicePG">My Device</p>
 				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
 					<li>
 						Cordova version:
@@ -85,29 +89,36 @@
 			</div><!-- end page 1 content -->
 			
 			<div data-role="footer" data-position="fixed">
-				<h1>Page1</h1>
+				<p id="pictureParagraph">Make picture
+					<a href="#picturePage" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+				</p>
 			</div><!-- /footer -->
 		</div>
 		<!-- /page1 -->
 
 				<!-- page 2 -->
-		<div data-role="page" id="page2">
+		<div data-role="page" id="picturePage">
 			<div data-role="header">
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#page1">Page 1</a></li>
-						<li><a href="#page2" class="ui-btn-active ui-state-persist">Page 2</a></li>
+						<li><a href="#picturePage" class="ui-btn-active ui-state-persist">Page 2</a></li>
 						<li><a href="#page3">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->	
 			</div>
 			
 			<div class="ui-content">
-				<p>This is page 2</p>
+				<p id="picturePG">Picture Page</p>
+				<div>
+					<img src="" alt="" id="myImage">
+					<button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
+					<a href="#page1" data-transition="slide" data-role="button" data-icon="back" id="back-btn">BACK</a>
+				</div>
 			</div><!-- end page 2 content -->
 			
 			<div data-role="footer" data-position="fixed">
-				<h1>Page2</h1>
+				<p id="pictureParagraph">No Rights Reserved</p>
 			</div><!-- /footer -->
 		</div><!-- /page2 -->
 		
@@ -117,7 +128,7 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a href="#page1">Page 1</a></li>
-						<li><a href="#page2">Page 2</a></li>
+						<li><a href="#picturePage">Page 2</a></li>
 						<li><a href="#page3" class="ui-btn-active ui-state-persist">Page 3</a></li>
 					</ul>
 				</div><!-- /navbar -->

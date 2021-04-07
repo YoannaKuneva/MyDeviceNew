@@ -1,12 +1,12 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
-    // Cordova is now initialized. Have fun!
-
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     window.addEventListener("batterystatus", onBatteryStatus, false);
     applyDeviceData();
     checkConnection();
+    $("#camera-btn").click(getPicutre);
+    $("#addPicture").click(sendPictureRequest);
 }
 
 function applyDeviceData() {
