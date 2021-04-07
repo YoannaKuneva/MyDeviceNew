@@ -2,12 +2,12 @@ document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-    window.addEventListener("batterystatus", onBatteryStatus, false);
     applyDeviceData();
     checkConnection();
 
     navigator.geolocation.watchPosition(geolocationSuccess,geolocationError);
-
+    window.addEventListener("batterystatus", onBatteryStatus, false);
+    
     $("#camera-btn").click(getPicutre);
     $("#addPicture").click(sendPictureRequest);
 }
